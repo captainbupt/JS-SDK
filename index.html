@@ -27,14 +27,22 @@
     </table>
 </form>
 
+<!--
 <script src="fingerprint2.js"></script>
 <script src="fireradar.js"></script>
 <script src="cryptojs/core-min.js"></script>
 <script src="cryptojs/cipher-core-min.js"></script>
 <script src="cryptojs/aes-min.js"></script>
+<script src="jquery.min.js"></script>
+-->
+
+<script src="fireradar.min.js"></script>
 
 <script>
-    getToken();
+    //getToken();
+    new FireRadar().getFingerPrint(function(result){
+        alert(result);
+    });
 </script>
 </body>
 </html>
