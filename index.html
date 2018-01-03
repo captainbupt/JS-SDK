@@ -29,14 +29,17 @@
 <script type="text/javascript" src="fingerprint3.js"></script>
 <script type="text/javascript" src="fireradar.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="jquery.md5.js"></script>
+<script type="text/javascript" src="md5.js"></script>
 
 
 <script>
-    //getToken();
-    /*new FireRadar1({appcode: '00-xjd8Dk-test', encryption: 'yXnxFgtgSiyPoSM0'}).sendEvent(function (result) {
-        //alert(result);
-    });*/
+    var fireradar = new FireRadar({appcode: '00-xjd8Dk-test', encryption: 'yXnxFgtgSiyPoSM0'});
+    fireradar.onloadPage("fr001");
+    window.setTimeout(function () {
+        fireradar.onunloadPage("fr001");
+    }, 1000);
+    fireradar.onEvent("loginbutton", "fr001", {username: 'test'});
+
 </script>
 </body>
 </html>
